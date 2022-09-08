@@ -33,6 +33,9 @@ body{
     width: 70%;
     padding: 0px;
     margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card{
     position: absolute;
@@ -49,4 +52,22 @@ body{
 .back{
     background-image: url("./images/bg-card-back.png");
     transform: translate(50%, -10%);
+}
+form *{
+    margin: 5px;
+}
+#CVC{
+    margin-left: 9px;
+}
+.small{
+    width: 50px;
+}
+.medium{
+    width: 176px;
+}
+.large{
+    width: 300px;
+}
+input[type="submit"]{
+    width: 300px;
 }

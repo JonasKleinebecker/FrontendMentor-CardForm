@@ -22,14 +22,14 @@
   <div class="right bgbox">
     <form>
       <label for="Name">CARDHOLDER NAME</label><br>
-      <input class="blockinput large" id="Name" type="text" required><br>
+      <input class="blockinput large" id="Name" type="text" placeholder=" " required><br>
 
       <label for="Cardnumber">CARD NUMBER</label><br>
-      <input class="blockinput large" id="Cardnumber" type="text" required pattern="^[0-9]{12}$"><br>
+      <input class="blockinput large" id="Cardnumber" type="text" placeholder=" " required pattern="^[0-9]{12}$"><br>
 
       <label for="expirationmonth">EXP. DATE(MM/YY)</label>
       <label for="CVC">CVC</label><br>
-      <input class="small" id="expirationmonth" type="text" required pattern="(?!00)(?!1[3-9])[0-1][0-9]"><input class="small" id="expirationyear" type="text" required pattern="[0-9][0-9]"><input class="medium" id="CVC" type="text" required><br>
+      <input class="small" id="expirationmonth" type="text" placeholder="MM" required pattern="(?!00)(?!1[3-9])[0-1][0-9]"><input class="small" id="expirationyear" type="text" placeholder="YY" required pattern="[0-9][0-9]"><input class="medium" id="CVC" type="text" placeholder="e.g. 123" required><br>
 
       <input class="large" type="submit" value="Confirm">
     </form>

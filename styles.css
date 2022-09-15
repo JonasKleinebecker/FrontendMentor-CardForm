@@ -54,21 +54,37 @@ body{
     background-image: url("./images/bg-card-back.png");
     transform: translate(50%, -10%);
 }
-form *{
+form input[type="text"]{
+    border-radius: 10px;
+    text-indent: 1em;
     margin: 0px 5px 28px 5px;
     height: 40px;
-    border-radius: 6px;
-    font-size: 10px;
+    font-size: 16px;
+    padding: 0;
+}
+form input[type="text"]:focus{
+    /* gradient border */
+    outline: none;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white),
+    linear-gradient(90deg, hsl(249, 99%, 64%),hsl(278, 94%, 30%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+form label{
+    font-size: 11px;
     letter-spacing: 0.2em;
 }
+
 #CVC{
     margin-left: 9px;
 }
 .small{
-    width: 64px;
+    width: 70px;
 }
 .medium{
-    width: 198px;
+    width: 186px;
 }
 .large{
     width: 350px;
@@ -78,8 +94,11 @@ input[type="submit"]{
     color: hsl(0, 0%, 100%);
     height: 44px;
     font-size: 16px;
-    letter-spacing: normal;
+    margin: 5px;
 }
-input:invalid{
-    border: 1px solid red;
+input:not(:focus):not(:placeholder-shown):invalid{
+    border: 2px solid hsl(0, 100%, 66%);
+}
+input:valid{
+    border: 2px solid black;
 }

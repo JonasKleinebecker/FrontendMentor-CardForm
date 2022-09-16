@@ -55,17 +55,18 @@ body{
     transform: translate(50%, -10%);
 }
 form input[type="text"]{
-    border-radius: 10px;
+    border-radius: 8px;
     text-indent: 1em;
     margin: 0px 5px 28px 5px;
     height: 40px;
     font-size: 16px;
     padding: 0;
+    outline: none;
+    border: 1px solid hsl(270, 3%, 87%);
 }
 form input[type="text"]:focus{
     /* gradient border */
-    outline: none;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     background-image: linear-gradient(white, white),
     linear-gradient(90deg, hsl(249, 99%, 64%),hsl(278, 94%, 30%));
     background-origin: border-box;
@@ -95,10 +96,11 @@ input[type="submit"]{
     height: 44px;
     font-size: 16px;
     margin: 5px;
+    border-radius: 8px;
 }
 input:not(:focus):not(:placeholder-shown):invalid{
-    border: 2px solid hsl(0, 100%, 66%);
+    border: 1px solid hsl(0, 100%, 66%);
 }
-input:valid{
-    border: 2px solid black;
+form input[type="text"]:valid{
+    outline: 10px solid hsl(270, 3%, 87%);
 }

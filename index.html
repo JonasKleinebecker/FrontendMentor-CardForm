@@ -16,8 +16,15 @@
 </head>
 <body>
   <div class="left bgbox">
-    <div class="card front"></div>
-    <div class="card back"></div>
+    <div class="card front">
+      <img class="banklogo" src="images/card-logo.svg" alt="Bank Logo">
+      <p class="dcardnumber">0000 0000 0000 0000</p>
+      <p class="dcardholder">Max Mustermann</p>
+      <p class="dexpdate">00/00</p>
+    </div>
+    <div class="card back">
+      <p class="dcvc">000</p>
+    </div>
   </div>
   <div class="right bgbox">
     <form>
@@ -25,7 +32,7 @@
       <input class="blockinput large" id="Name" type="text" placeholder=" " required><br>
 
       <label for="Cardnumber">CARD NUMBER</label><br>
-      <input class="blockinput large" id="Cardnumber" type="text" placeholder=" " required pattern="^[0-9]{12}$"><br>
+      <input class="blockinput large" id="Cardnumber" type="text" placeholder=" " required pattern="^[0-9]{16}$"><br>
 
       <label for="expirationmonth">EXP. DATE(MM/YY)</label>
       <label for="CVC">CVC</label><br>

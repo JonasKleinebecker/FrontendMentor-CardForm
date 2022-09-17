@@ -40,20 +40,68 @@ body{
 }
 .card{
     position: absolute;
-    width: 447px;
-    height: 245px;
+    width: calc(447px * 0.85);
+    height: calc(245px * 0.85);
     border-radius: 3%;
-    right: 0%;
-    top: 50%;
 }
 .front{
     background-image: url("./images/bg-card-front.png");
-    transform: translate(10%,-140%);
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    top: 18%;
+    right: 0%;
+    transform: translate(20%, 0);
 }
 .back{
     background-image: url("./images/bg-card-back.png");
-    transform: translate(50%, -10%);
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    top: 50%;
+    right: 0%;
+    transform: translate(50%, 0);
 }
+.front *{
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+}
+
+.front .dcardnumber{
+    top: 56%;
+    left: 8%;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+}
+
+.front .dcardholder, .dexpdate{
+    top: 81%;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: hsl(270, 3%, 87%);
+}
+
+.back .dcvc{
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    top: 46%;
+    right: 13%;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.front .banklogo{
+    transform: scale(80%);
+    top: 8%;
+    left: 5%;
+}
+
+.front .dcardholder{
+    left: 8%;
+}
+.front .dexpdate{
+    left: 82%;
+}
+
+
 form input[type="text"]{
     border-radius: 8px;
     text-indent: 1em;

@@ -18,28 +18,29 @@
   <div class="left bgbox">
     <div class="card front">
       <img class="banklogo" src="images/card-logo.svg" alt="Bank Logo">
-      <p class="dcardnumber">0000 0000 0000 0000</p>
-      <p class="dcardholder">Max Mustermann</p>
-      <p class="dexpdate">00/00</p>
+      <p class="dcardnumber" id="dcardnumber">0000 0000 0000 0000</p>
+      <p class="dcardholder" id="dcardholdername">Max Mustermann</p>
+      <p class="dexpdate" id="dexpdate">00/00</p>
     </div>
     <div class="card back">
-      <p class="dcvc">000</p>
+      <p class="dcvc" id="dcvc">000</p>
     </div>
   </div>
   <div class="right bgbox">
     <form>
-      <label for="Name">CARDHOLDER NAME</label><br>
-      <input class="blockinput large" id="Name" type="text" placeholder=" " required><br>
+      <label for="fcardholdername">CARDHOLDER NAME</label><br>
+      <input class="blockinput large" id="fcardholdername" type="text" placeholder=" " required><br>
 
-      <label for="Cardnumber">CARD NUMBER</label><br>
-      <input class="blockinput large" id="Cardnumber" type="text" placeholder=" " required pattern="^[0-9]{16}$"><br>
+      <label for="fcardnumber">CARD NUMBER</label><br>
+      <input class="blockinput large" id="fcardnumber" type="text" placeholder=" " required pattern="^[0-9]{16}$"><br>
 
-      <label for="expirationmonth">EXP. DATE(MM/YY)</label>
-      <label for="CVC">CVC</label><br>
-      <input class="small" id="expirationmonth" type="text" placeholder="MM" required pattern="(?!00)(?!1[3-9])[0-1][0-9]"><input class="small" id="expirationyear" type="text" placeholder="YY" required pattern="[0-9][0-9]"><input class="medium" id="CVC" type="text" placeholder="e.g. 123" required><br>
+      <label for="fexpmonth">EXP. DATE(MM/YY)</label>
+      <label for="fcvc">CVC</label><br>
+      <input class="small" id="fexpmonth" type="text" placeholder="MM" required pattern="(?!00)(?!1[3-9])[0-1][0-9]"><input class="small" id="fexpyear" type="text" placeholder="YY" required pattern="[0-9][0-9]"><input class="medium" id="fcvc" type="text" placeholder="e.g. 123" required><br>
 
-      <input class="large" type="submit" value="Confirm">
+      <input class="large" type="button" id="btnsubmit" value="Confirm">
     </form>
   </div>
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     subbutton.addEventListener("click", writeDataOnCard);
 
 function writeDataOnCard(){
-    if((fcardholder.validity.valid === true) && !(fcardholder.value === " ")
+    if((fcardholder.validity.valid === true)
         && (fcardnumber.validity.valid === true) 
         && (fcardexpmonth.validity.valid === true) 
         && (fcardexpyear.validity.valid === true) 
@@ -25,6 +25,50 @@ function writeDataOnCard(){
         dcardexpdate.innerHTML = fcardexpmonth.value + "/" + fcardexpyear.value;
     }
     else{
-        //set .error class
+
+        if(fcardnumber.validity.valid === false){
+            fcardnumber.classList.add("error");
+
+            if(fcardnumber.validity.patternMismatch === true){
+                fcardnumber.classList.add("wrongnumberpattern")
+            }
+            if(fcardnumber.validity.tooShort ===true || fcardnumber.validity.tooLong ===true){
+                fcardnumber.classList.add("wronglength");
+            }
+        }
+        if(fcardholder.validity.valid === false){
+            fcardholder.classList.add("error");
+        }
+        if(fcardexpmonth.validity.valid === false){
+            fcardexpmonth.classList.add("error");
+
+            if(fcardexpmonth.validity.patternMismatch === true){
+                fcardexpmonth.classList.add("wrongdatepattern")
+            }
+             
+        }
+        if(fcardexpyear.validity.valid === false){
+            fcardexpyear.classList.add("error");
+
+            if(fcardexpyear.validity.patternMismatch === true){
+                fcardexpyear.classList.add("wrongdatepattern")
+            }
+             
+        }
+        if(fcardcvc.validity.valid === false){
+            fcardcvc.classList.add("error");
+        }
     }
+    if(fcardnumber.validity.patternMismatch === false && fcardnumber.classList.contains("wrongpattern")){
+        fcardnumber.classList.remove("wrongpattern");
+       }
+    if(fcardnumber.validity.tooLong === false && fcardnumber.validity.tooShort === false && fcardnumber.classList.contains("wronglength")){
+        fcardnumber.classList.remove("wronglength");
+       }
+    if(fcardexpmonth.validity.patternMismatch === false && fcardexpmonth.classList.contains("wrongdatepattern")){
+        fcardexpmonth.classList.remove("wrongdatepattern");
+       }
+    if(fcardexpyear.validity.patternMismatch === false && fcardexpyear.classList.contains("wrongdatepattern")){
+        fcardexpyear.classList.remove("wrongdatepattern");
+       }
 }

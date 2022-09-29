@@ -101,7 +101,6 @@ body{
     left: 82%;
 }
 
-
 form input[type="text"]{
     border-radius: 8px;
     text-indent: 1em;
@@ -124,6 +123,7 @@ form input[type="text"]:focus{
 form label{
     font-size: 11px;
     letter-spacing: 0.2em;
+    padding-left: 0.6em;
 }
 
 #CVC{
@@ -149,6 +149,37 @@ input[type="button"]{
 input:not(:focus):not(:placeholder-shown):invalid{
     border: 1px solid hsl(0, 100%, 66%);
 }
+
+form > div:has(input.error:invalid)::after{
+    content:"Can't be blank";  
+    width: 100%;
+    height: min-content;
+    display: block;
+    color: hsl(0, 100%, 66%);
+    position: relative;
+    top: -20px;
+    font-weight: 500;
+    font-size: 11px;
+    padding-left: 0.6em;
+}
+
+form > div:has(input.wrongnumberpattern:invalid)::after{
+    content:"Wrong format, numbers only";
+}
+form > div:has(input.wronglength:invalid)::after{
+    content:"must be 16 digits long";
+}
+form > div:has(input.wrongdatepattern:invalid)::after{
+    content:"Must be format MM/YY";
+}
+
+
+form input.error{
+    border: 1px solid hsl(0, 100%, 66%);
+}
 form input[type="text"]:not(:focus):valid{
     border: 1px solid hsl(270, 3%, 87%);
+}
+.inline-div{
+    display: inline-block;
 }
